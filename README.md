@@ -16,8 +16,8 @@ It's an ongoing open-source project explained in tech talks with [X-Technology](
 ## Goals
 
 - learn basic setup for golang repo
-- design architecture of system: interfaces, modules.
-- pick a module system: native golang modules,
+- design architecture of system: interfaces, plugins.
+- pick a module system: native golang plugins or RPC plugins,
 - prototyping CI/CD workflow for cloud providers.
 
 ## Non-Goals
