@@ -1,12 +1,14 @@
 # TimeMate
 
 ## Overview:
-This is a demo project to automate daily rutines of consultancy agent (developer)
-- track time over different platform, which you're comfortable with
-- synchronize tracked time entries with customer's software, e.g. Jira, YouTrack
-- create regular (monthly, weekly) time reports
-- create regular invoices (monthly, weekly)
-- send reports/invoices over various of channels
+This is a demo project to automate daily rutines of consultancy agent (developer).
+- track time over different platform, which you're comfortable with.
+- synchronize tracked time entries with customer's software, e.g. Jira, YouTrack.
+- create regular (monthly, weekly) time reports in PDF.
+- create regular invoices (monthly, weekly) in PDF.
+- send reports/invoices over various of channels, e.g. slack, email.
+- reconcline invoices with bussiness account to mark that money is received.
+- tax reporting
 
 It's an ongoing open-source project explained in tech talks with [X-Technology](https://github.com/x-technology) group.
 
