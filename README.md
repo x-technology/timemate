@@ -36,7 +36,7 @@ It's an ongoing open-source project explained in tech talks with [X-Technology](
 
 Please share your thoughts with us
 
-- [What should be GooseOps next step?](https://forms.gle/FbLyNkD3ks8kyiMy9) 
+- [What should be TimeMate next step?](https://forms.gle/FbLyNkD3ks8kyiMy9) 
 - or even [become XTechnology Expert](https://forms.gle/8xc1j7cf8h3sEZ6W8) 👍
 
 Thanks!
