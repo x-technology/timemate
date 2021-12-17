@@ -3,15 +3,6 @@
 ### Date And Time
 Sat, December 18th, 2021 10:00 PM – 11:00 PM CET
 
-- About us
-- TimeMate
-    - Goals
-    - Docker
-    - Kubernetes
-    - Helm
-    - Terraform
-- Next Steps
-
 # About us
 
 **XTechnology** - *Educational Dev* open source project
