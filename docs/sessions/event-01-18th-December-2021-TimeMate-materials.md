@@ -58,6 +58,52 @@ In gRPC, a client application can directly call a method on a server application
 
 ![Grpc Schema](https://grpc.io/img/landing-2.svg)
 
+### Protocol Buffers
+
+By default, gRPC uses Protocol Buffers, Google’s mature open source mechanism for serializing structured data (although it can be used with other data formats such as JSON).
+
+Let's have a look into our tracking api interface.
+
+```protobuf
+package trackerApi;
+
+service TrackerApiService {
+  rpc GetTimeEntries(GetTimeEntriesRequest) returns (GetTimeEntriesResponse) {}
+}
+
+message TimeEntry {
+   string id = 1;
+   string description = 2;
+   string start = 3;
+   string end = 4;
+   repeated string tags = 5;
+   source string = 6;
+}
+
+message GetTimeEntriesRequest {
+    string start = 1;
+    string end = 2;
+}
+
+message GetTimeEntriesResponse {
+    repeated TimeEntry entries = 1;
+}
+```
+
+## Plugins in Golang
+
+### Compile-time plugins
+Compile-time plugins consist of code packages that get compiled into the application's main binary. Once the binary is built, its functionality is fixed.
+
+The best known example of a compile-time plugin system in Go is drivers for the `database/sql` package.
+Usually Discovery and Registration of such plugins happens automatically, when you `import` a package.
+
+### Run-time plugins
+Run-time plugins consist of code that does not get compiled into the original binary of the main application; instead, it hooks up to this application at run-time. In compiled languages, a common tool to achieve this goal is *shared libraries*, and Go supports this approach as well.
+
+Go comes with a plugin package built into the standard library. This package lets us write Go programs that get compiled into shared libraries instead of into executable binaries; further, it provides simple functions for loading shared libraries and getting symbols from them.
+
+
 # Next Steps
 
 - Build first gRPC server/client
