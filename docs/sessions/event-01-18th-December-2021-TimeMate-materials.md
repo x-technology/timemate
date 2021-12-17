@@ -111,10 +111,10 @@ It has several important upsides:
 - Interoperability between languages: if RPC is the interface, do you care what language the plugin is written in?
 - Distribution: if plugins interface via the network, we can easily distribute them to run on different machines for gains in performance, reliability, and so on.
 
-Let's take a look into a code example
+Let's take a look into a [code example](https://github.com/hashicorp/go-plugin/tree/master/examples/grpc)
 
 **Updating the Protocol**
-If you update the protocol buffers file, you can regenerate the file using the following command from this directory. You do not need to run this if you're just trying the example.
+If you update the protocol buffers file, you can regenerate the file using the following command.
 
 ```shell
 protoc \
