@@ -19,8 +19,8 @@ It's an ongoing open-source project explained in tech talks with [X-Technology](
 
 - learn basic setup for golang repo
 - design architecture of system: interfaces, plugins.
-- pick a module system: native golang plugins or RPC plugins,
-- prototyping CI/CD workflow for cloud providers.
+- pick a module system: native golang plugins or (g)RPC plugins
+- quick look into brew package publication process
 
 ## Non-Goals
 - kick-off a project into a public usage
