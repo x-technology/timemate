@@ -1,4 +1,4 @@
-# Introducing TimeMate
+# TimeMate - How to make time & microservices work for you with Golang and GRPC
 
 ### Date And Time
 Sat, December 18th, 2021 10:00 PM – 11:00 PM CET
