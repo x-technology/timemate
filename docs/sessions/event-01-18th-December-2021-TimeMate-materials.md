@@ -65,29 +65,30 @@ By default, gRPC uses Protocol Buffers, Google’s mature open source mechanism 
 Let's have a look into our tracking api interface.
 
 ```protobuf
-package trackerApi;
+package tracker;
 
 service TrackerApiService {
   rpc GetTimeEntries(GetTimeEntriesRequest) returns (GetTimeEntriesResponse) {}
 }
 
 message TimeEntry {
-   string id = 1;
-   string description = 2;
-   string start = 3;
-   string end = 4;
-   repeated string tags = 5;
-   source string = 6;
+  string id = 1;
+  string description = 2;
+  string start = 3;
+  string end = 4;
+  repeated string tags = 5;
+  string source = 6;
 }
 
 message GetTimeEntriesRequest {
-    string start = 1;
-    string end = 2;
+  string start = 1;
+  string end = 2;
 }
 
 message GetTimeEntriesResponse {
-    repeated TimeEntry entries = 1;
+  repeated TimeEntry entries = 1;
 }
+
 ```
 
 ## Plugins in Golang
@@ -103,17 +104,48 @@ Run-time plugins consist of code that does not get compiled into the original bi
 
 Go comes with a plugin package built into the standard library. This package lets us write Go programs that get compiled into shared libraries instead of into executable binaries; further, it provides simple functions for loading shared libraries and getting symbols from them.
 
+Discovery and Registration: accomplished via file system lookup.
+
+However, this approach also has some serious downsides. The most important downside is that Go is very picky about keeping the main application and the shared libraries it loads compatible.
+
+#### Alternatives?
+
+RPC-based plugin systems!
+
+[hashicorp/go-plugin](https://github.com/hashicorp/go-plugin) is one of the most popular.
+
+It has several important upsides:
+
+- Isolation: crash in a plugin does not bring the whole application down.
+- Interoperability between languages: if RPC is the interface, do you care what language the plugin is written in?
+- Distribution: if plugins interface via the network, we can easily distribute them to run on different machines for gains in performance, reliability, and so on.
+
+Let's take a look into a code example
+
+**Updating the Protocol**
+If you update the protocol buffers file, you can regenerate the file using the following command from this directory. You do not need to run this if you're just trying the example.
+
+```shell
+protoc \
+  --go_out=. \
+  --go_opt=paths=source_relative \
+  --go-grpc_out=. \
+  --go-grpc_opt=paths=source_relative \
+  ./proto/tracker.proto
+```
 
 # Next Steps
 
 - Build first gRPC server/client
-- Let's implement couple of services on each side to see the whole picture
-- Prepare timemate app for publication to [homebrew](https://brew.sh/)
+- Let's implement a couple of services on each side to see the whole picture
+- Prepare TimeMate app for publication to [homebrew](https://brew.sh/)
 
 ## Resources
 
 - [GRPC](https://grpc.io/docs/what-is-grpc/introduction/)
 - [FigmaJam](https://www.figma.com/figjam/)
+- [Plugins in Go](https://eli.thegreenplace.net/2021/plugins-in-go/)
+- [Protobuf](https://developers.google.com/protocol-buffers/docs/reference/go-generated#package)
 
 ## Q/A
 
