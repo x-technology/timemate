@@ -52,7 +52,7 @@ This is a demo project to automate daily routines of consultancy agent (develope
 - tax reporting - once a year we need to sign and send special report to the tax services.
 
 ## MVP
-As a first thing, I've crafted a cli application, which can be executed on a developer's computer and in the background do a very simple thing:
+As a first thing, I've crafted a [cli application](https://github.com/timemate/toggl-sync), which can be executed on a developer's computer and in the background do a very simple thing:
 - fetch data from Toggle
 - synchronize it with Jira.
 
