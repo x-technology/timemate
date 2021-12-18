@@ -1,5 +1,9 @@
 # TimeMate
 
+## Where to find?
+
+The project is fully open sourced and located [in here](https://github.com/timemate)
+
 ## Overview:
 This is a demo project to automate daily routines of consultancy agent (developer).
 
