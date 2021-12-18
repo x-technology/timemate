@@ -44,7 +44,7 @@ To help with that task I have multiple paid tools and still spend 1 whole day a 
 This is a demo project to automate daily routines of consultancy agent (developer).
 
 - track time over different platform, which you're comfortable with.
-- synchronize tracked time entries with customer's software, e.g. Jira, YouTrack.
+- synchronize tracked time entries with a customer's software, e.g. Jira, YouTrack.
 - create regular (monthly, weekly) time reports in a PDF.
 - create regular invoices (monthly, weekly) in a PDF.
 - send reports/invoices over various of channels, e.g. slack, email.
